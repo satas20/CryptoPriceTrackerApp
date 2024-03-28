@@ -9,13 +9,16 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
+
 @Entity
 @Getter
 @Setter
 @RequiredArgsConstructor
 @Data
-public class TradeData {
+public class TradeData  {
 
     @Id
     @GeneratedValue
@@ -24,7 +27,7 @@ public class TradeData {
     private BigDecimal price;
     private BigDecimal quantity;
     private long timestamp;
-
+    private Date date;
 
 
     // ... other fields as needed

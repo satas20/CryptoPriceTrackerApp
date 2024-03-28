@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Service
 public class TradeDataService {
@@ -33,6 +34,7 @@ public class TradeDataService {
             tradeData.setQuantity(new BigDecimal(rootNode.path("q").asText()));
 
             tradeData.setTimestamp(rootNode.path("E").asLong());
+            tradeData.setDate(new Date(tradeData.getTimestamp()));
             return tradeData;
         } catch (IOException e) {
             throw new RuntimeException("Error parsing trade data", e);
