@@ -8,19 +8,59 @@ import com.example.cyrptoapp.entity.TradeData;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class TradeDataService {
     @Autowired
     private TradeDataRepository tradeDataRepository;
+    private final RedisTemplate<String, Object> redisTemplate;
 
+    public TradeDataService(RedisTemplate<String, Object> redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
 
+    public void saveCurrentPrice(String key, String data) {
+        redisTemplate.opsForValue().set(key, data);
+        redisTemplate.expire(key, 1, TimeUnit.MINUTES);
+    }
+    public String getCurrentprice(String key)
+    {
+        if(redisTemplate.opsForValue().get(key) == null)
+        {
+            saveCurrentPrice(key, getCurrPriceDB(key).toString());
 
+        }
+        String price = (String) redisTemplate.opsForValue().get(key);
+        //buraya kadar geliyor reture dee giriyor ama 404 veriyor ??
+        return price;
+    }
+    public BigDecimal getCurrPriceDB(String symbol){
+        //get the current price of the symbol
+        switch (symbol) {
+            case "BTCUSDT":
+                BTCData btcData = tradeDataRepository.findMostRecentFromBTC();
+                return btcData.getPrice();
+
+            case "ETHUSDT":
+                ETHData ethdata= tradeDataRepository.findMostRecentFromETH();
+                return ethdata.getPrice();
+            case "SOLUSDT":
+                SOLData solData=tradeDataRepository.findMostRecentFromSOL();
+                return solData.getPrice();
+            default:
+                // Handle unknown symbol
+                break;
+        }
+        return null;
+
+    }
 
     public TradeData parseTradeData(String payload) {
         // Assuming you're using Jackson for JSON parsing
@@ -50,8 +90,8 @@ public class TradeDataService {
 
     }
     public void processTradeData(TradeData tradeData) {
-        // Potentially add data to a queue or process before saving
-        switch (tradeData.getSymbol()) {
+        // Potentially add data to a queue or process before saving;
+       switch (tradeData.getSymbol()) {
             case "BTCUSDT":
                 BTCData btcData = createBTCData(tradeData);
                 tradeDataRepository.save(btcData);
