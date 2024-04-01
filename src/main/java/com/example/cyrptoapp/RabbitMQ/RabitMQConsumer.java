@@ -1,6 +1,6 @@
 package com.example.cyrptoapp.RabbitMQ;
 
-import com.example.cyrptoapp.TradeData;
+import com.example.cyrptoapp.Model.TradeData;
 import com.example.cyrptoapp.TradeDataService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +20,7 @@ public class RabitMQConsumer {
     @RabbitListener(queues = "${rabbitmq.queue.name}")
     public void consumeMessage(TradeData message) {
         Logger LOGGER = LoggerFactory.getLogger(RabitMQConsumer.class);
+
         LOGGER.info("Message received: " + message.getSymbol() +" "+ message.getPrice() +" "+ message.getQuantity()  );
         tradeDataService.processTradeData(message);
     }

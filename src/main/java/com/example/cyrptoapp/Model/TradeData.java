@@ -1,9 +1,7 @@
-package com.example.cyrptoapp;
+package com.example.cyrptoapp.Model;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +16,7 @@ import java.util.Date;
 @Setter
 @RequiredArgsConstructor
 @Data
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class TradeData  {
 
     @Id

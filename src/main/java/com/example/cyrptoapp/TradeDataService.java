@@ -1,5 +1,6 @@
 package com.example.cyrptoapp;
 
+import com.example.cyrptoapp.Model.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,10 @@ import java.util.Date;
 @Service
 public class TradeDataService {
     @Autowired
-    private TradeDataRepository repository;
+    private TradeDataRepository tradeDataRepository;
+
+
+
 
     public TradeData parseTradeData(String payload) {
         // Assuming you're using Jackson for JSON parsing
@@ -43,6 +47,58 @@ public class TradeDataService {
     }
     public void processTradeData(TradeData tradeData) {
         // Potentially add data to a queue or process before saving
-        repository.save(tradeData);
+        switch (tradeData.getSymbol()) {
+            case "BTCUSDT":
+                BTCData btcData = createBTCData(tradeData);
+                tradeDataRepository.save(btcData);
+                break;
+            case "ETHUSDT":
+                ETHData ethData = createETHData(tradeData);
+                tradeDataRepository.save(ethData);
+                break;
+            case "SOLUSDT":
+                SOLData solData = createSOLData(tradeData);
+                tradeDataRepository.save(solData);
+                break;
+            default:
+                // Handle unknown symbol
+                break;
+        }
+
+    }
+    private BTCData createBTCData(TradeData tradeData) {
+        BTCData btcData = new BTCData();
+        // Set common attributes
+        btcData.setSymbol(tradeData.getSymbol());
+        btcData.setPrice(tradeData.getPrice());
+        btcData.setQuantity(tradeData.getQuantity());
+        btcData.setTimestamp(tradeData.getTimestamp());
+        btcData.setDate(tradeData.getDate());
+        // Set additional attributes specific to BTCData if any
+        return btcData;
+    }
+
+    private ETHData createETHData(TradeData tradeData) {
+        ETHData ethData = new ETHData();
+        // Set common attributes
+        ethData.setSymbol(tradeData.getSymbol());
+        ethData.setPrice(tradeData.getPrice());
+        ethData.setQuantity(tradeData.getQuantity());
+        ethData.setTimestamp(tradeData.getTimestamp());
+        ethData.setDate(tradeData.getDate());
+        // Set additional attributes specific to ETHData if any
+        return ethData;
+    }
+
+    private SOLData createSOLData(TradeData tradeData) {
+        SOLData solData = new SOLData();
+        // Set common attributes
+        solData.setSymbol(tradeData.getSymbol());
+        solData.setPrice(tradeData.getPrice());
+        solData.setQuantity(tradeData.getQuantity());
+        solData.setTimestamp(tradeData.getTimestamp());
+        solData.setDate(tradeData.getDate());
+        // Set additional attributes specific to SOLData if any
+        return solData;
     }
 }

@@ -2,6 +2,7 @@ package com.example.cyrptoapp;
 
 import com.binance.connector.client.WebSocketStreamClient;
 import com.binance.connector.client.impl.WebSocketStreamClientImpl;
+import com.example.cyrptoapp.Model.TradeData;
 import com.example.cyrptoapp.RabbitMQ.RabitMQProducer;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,18 @@ public class BinanceWebSocketClient {
             rabitMQProducer.sendMessage(tradeData );
         }));
 
+        int streamID2 = wsStreamClient.aggTradeStream("ethusdt",((message) -> {
+            TradeData tradeData = tradeDataService.parseTradeData(message);
 
+            //System.out.println("Message Received: " + message);
+            rabitMQProducer.sendMessage(tradeData );
+        }));
+
+        int stramID3 = wsStreamClient.aggTradeStream("solusdt",((message) -> {
+            TradeData tradeData = tradeDataService.parseTradeData(message);
+
+            //System.out.println("Message Received: " + message);
+            rabitMQProducer.sendMessage(tradeData );
+        }));
     }
 }
