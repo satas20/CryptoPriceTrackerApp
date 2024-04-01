@@ -1,5 +1,6 @@
-package com.example.cyrptoapp.Model;
+package com.example.cyrptoapp.model;
 
+import com.example.cyrptoapp.entity.TradeData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

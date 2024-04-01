@@ -1,9 +1,9 @@
-package com.example.cyrptoapp;
+package com.example.cyrptoapp.service;
 
 import com.binance.connector.client.WebSocketStreamClient;
 import com.binance.connector.client.impl.WebSocketStreamClientImpl;
-import com.example.cyrptoapp.Model.TradeData;
-import com.example.cyrptoapp.RabbitMQ.RabitMQProducer;
+import com.example.cyrptoapp.entity.TradeData;
+import com.example.cyrptoapp.service.RabbitMQ.RabitMQProducer;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

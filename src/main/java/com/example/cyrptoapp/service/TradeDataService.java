@@ -1,6 +1,10 @@
-package com.example.cyrptoapp;
+package com.example.cyrptoapp.service;
 
-import com.example.cyrptoapp.Model.*;
+import com.example.cyrptoapp.model.*;
+import com.example.cyrptoapp.entity.BTCData;
+import com.example.cyrptoapp.entity.ETHData;
+import com.example.cyrptoapp.entity.SOLData;
+import com.example.cyrptoapp.entity.TradeData;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

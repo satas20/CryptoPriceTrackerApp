@@ -1,6 +1,6 @@
-package com.example.cyrptoapp.RabbitMQ;
+package com.example.cyrptoapp.service.RabbitMQ;
 
-import com.example.cyrptoapp.Model.TradeData;
+import com.example.cyrptoapp.entity.TradeData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

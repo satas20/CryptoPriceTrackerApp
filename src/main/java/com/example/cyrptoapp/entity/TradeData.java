@@ -1,4 +1,4 @@
-package com.example.cyrptoapp.Model;
+package com.example.cyrptoapp.entity;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.persistence.*;

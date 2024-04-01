@@ -1,4 +1,4 @@
-package com.example.cyrptoapp.RabbitMQ;
+package com.example.cyrptoapp.config;
 
 import com.rabbitmq.client.impl.AMQBasicProperties;
 import org.springframework.amqp.core.*;

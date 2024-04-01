@@ -1,4 +1,4 @@
-package com.example.cyrptoapp;
+package com.example.cyrptoapp.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.CloseStatus;

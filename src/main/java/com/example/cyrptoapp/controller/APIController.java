@@ -1,4 +1,4 @@
-package com.example.cyrptoapp;
+package com.example.cyrptoapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
