@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: MyPostgres
+    type: postgres
+    url: db:5432
+    database: postgres
+    user: postgres
+    password: 12345
+    jsonData:
+      tlsAuth: true   # Example - Enable TLS if needed
+      postgresVersion: 1000 # Adjust PostgreSQL version if necessary
+    secureJsonData:
+      tlsCACert: '...your CA cert...'  # If using TLS with a specific CA
+    version: 1
+    editable: true

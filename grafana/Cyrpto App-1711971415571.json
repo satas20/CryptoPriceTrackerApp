@@ -23,8 +23,7 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "fdhekduldrtogb"
+        "type": "grafana-postgresql-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -103,8 +102,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "fdhekduldrtogb"
+            "type": "grafana-postgresql-datasource"
           },
           "editorMode": "code",
           "format": "table",
@@ -173,8 +171,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "fdhekduldrtogb"
+        "type": "grafana-postgresql-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -252,8 +249,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "fdhekduldrtogb"
+            "type": "grafana-postgresql-datasource"
           },
           "editorMode": "code",
           "format": "table",
@@ -313,8 +309,7 @@
     },
     {
       "datasource": {
-        "type": "grafana-postgresql-datasource",
-        "uid": "fdhekduldrtogb"
+        "type": "grafana-postgresql-datasource"
       },
       "fieldConfig": {
         "defaults": {
@@ -406,8 +401,7 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-postgresql-datasource",
-            "uid": "fdhekduldrtogb"
+            "type": "grafana-postgresql-datasource"
           },
           "editorMode": "code",
           "format": "table",
@@ -479,7 +473,7 @@
   "timepicker": {},
   "timezone": "browser",
   "title": "Cyrpto App",
-  "uid": "adheluyum7qiob",
+  "uid": "CyrptoApp",
   "version": 6,
   "weekStart": ""
 }

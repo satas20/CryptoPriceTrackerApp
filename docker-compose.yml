@@ -29,4 +29,20 @@ services:
     image: grafana/grafana
     restart: always
     ports:
-      - "3001:3000"
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning/datasource
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_DATABASE_TYPE=postgres
+      - GF_DATABASE_HOST=db:5432
+      - GF_DATABASE_NAME=postgres
+      - GF_DATABASE_USER=postgres
+      - GF_DATABASE_PASSWORD=12345
+      #- GF_DATABASE_SSL_MODE=disable  # See security note below
+    depends_on: # Ensure PostgreSQL is up before Grafana
+        - db
+volumes:
+    grafana-data:

@@ -1,0 +1,94 @@
+.header-container {
+    background-color: #1a1a1a; /* Dark gray background */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #ffcc00; /* Bright yellow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.5em;
+    color: #ffffff; /* White text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.price {
+    font-size: 1.5em;
+    color: #f5f5f5; /* Light gray */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.current-price {
+    margin-bottom: 20px;
+}
+
+.prices-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.price-panel {
+    margin: 0 20px;
+}
+
+.panel {
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    background-color: #ffffff; /* White background */
+}
+
+.panel iframe {
+    width: 400px;
+    height: 250px;
+    border: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.countdown-container {
+    text-align: center;
+    
+    padding-bottom: 20px;
+}
+
+.countdown {
+    font-size: 24px;
+    color: #ffffff; /* White text */
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-value {
+    font-size: 36px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #1a1a1a; /* Dark gray background */
+    color: #ffffff; /* White text */
+    border-radius: 5px;
+}
+
+.countdown-label {
+    font-size: 18px;
+    color: #ffffff; /* White text */
+    margin: 0 5px;
+}
+
+body {
+    background-color: #292929; /* Slightly darker gray */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Currency Panels</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="countdown-container">
+    <div class="countdown">
+        <h1>🚀 Halving Countdown! 🚀</h1>
+        <div id="countdown" class="countdown-timer">
+            <span class="countdown-value days">00</span>
+            <span class="countdown-label">days</span>
+            <span class="countdown-value hours">00</span>
+            <span class="countdown-label">hours</span>
+            <span class="countdown-value minutes">00</span>
+            <span class="countdown-label">minutes</span>
+            <span class="countdown-value seconds">00</span>
+            <span class="countdown-label">seconds</span>
+        </div>
+    </div>
+</div>
+<div class="header-container">
+    <div class="current-price">
+        <h1>💰 Current Prices 💰</h1>
+        <div id="prices" class="prices-container">
+            <div class="price-panel">
+                <span class="price" id="solana-price">Solana: Loading...</span>
+                <div class="panel">
+                    <iframe src="http://localhost:3000/d-solo/CyrptoApp/cyrpto-app?orgId=1&from=1712068745920&to=1712241545920&panelId=3 frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="price-panel">
+                <span class="price" id="bitcoin-price">Bitcoin: Loading...</span>
+                <div class="panel">
+                    <iframe src="http://localhost:3000/d-solo/CyrptoApp/cyrpto-app?orgId=1&from=1712068745920&to=1712241545920&panelId=2" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="price-panel">
+                <span  class="price" id="ethereum-price">Ethereum: Loading...</span>
+                <div class="panel">
+                    <iframe src="http://localhost:3000/d-solo/CyrptoApp/cyrpto-app?orgId=1&from=1712068745920&to=1712241545920&panelId=1" frameborder="0"></iframe>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <span><p>🔍you can zoom in by selecting a range and zoom out with ctrl + z🧐</p></span>
+</div>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
