@@ -32,10 +32,12 @@ services:
       - "3000:3000"
     volumes:
       - grafana-data:/var/lib/grafana
-      - ./grafana/provisioning/datasource
+      - ./grafana/CryptoAppDash.json:/etc/grafana/provisioning/dashboards/CryptoAppDash.json
+
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
       - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_SECURITY_ADMIN_PASSWORD=admin
       - GF_DATABASE_TYPE=postgres
       - GF_DATABASE_HOST=db:5432
       - GF_DATABASE_NAME=postgres
