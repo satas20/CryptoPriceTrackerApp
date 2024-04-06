@@ -6,9 +6,9 @@ The app uses **Redis** to optimize the performance of the app by caching the cur
 
  # Features
     
-- Implement real-time data tracking and storage from the Binance API using RabbitMQ and PostgreSQL
+- Implement Large real-time data tracking and storage from the Binance API using RabbitMQ and PostgreSQL
 - Implementing the display of price graphs using Grafana panels.
-- Implementing caching for current price data using Redis.
+- Implementing caching for current prices data using Redis.
 - Implementing a countdown for the bitcoin halving.
 - Utilizing Docker Compose to orchestrate the required images for the application.
 
@@ -40,7 +40,7 @@ Run Docker Daemon:
 Start-Service Docker
 ```
 
-If your IDE doesn't support DockerCompose, run the following command:
+If your docker container is not started, start manualy it with the following command:
 ```bash
 docker-compose up
 ```
