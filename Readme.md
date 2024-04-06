@@ -6,10 +6,10 @@ The app tracks data for Bitcoin, Solana and Ethereum. More coins can be  added f
 
 
  # Features
-    
-- Implement large real-time data tracking  (5 messages per second for a Coin) and storage from the Binance API using RabbitMQ and PostgreSQL
-- Implementing the display of price graphs using Grafana panels.
-- Implementing caching for current prices data using Redis.
+
+- Real time large data processing(5 messages per second for a Coin)and storage from the Binance API using RabbitMQ and PostgreSQL.
+- Visualising price data using Grafana panels.
+- Caching current price data using Redis.
 - Implementing a countdown for the bitcoin halving.
 - Utilizing Docker Compose to orchestrate the required images for the application.
 
