@@ -17,10 +17,9 @@ The app uses **Redis** to optimize the performance of the app by caching the cur
 
 
 <p align="center">
-    
   <img src="Media/gifWeb.gif" width="900">
 </p>
-<br>
+
 <p align="center">
   <img src="Media/gifConsole.gif" width="900">
 </p>
