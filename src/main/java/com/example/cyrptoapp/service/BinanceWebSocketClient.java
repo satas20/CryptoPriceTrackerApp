@@ -11,11 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BinanceWebSocketClient {
-    @Value("${binance.api.key}")
-    private String apiKey;
 
-    @Value("${binance.api.secret}")
-    private String secretKey;
 
     @Autowired
     private TradeDataService tradeDataService;
