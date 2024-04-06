@@ -1,4 +1,4 @@
-# Crypto Price Tracker App 
+#  🚀Crypto Price Tracker App  🚀
 This is a spring boot application that gets the latest crypto prices from the Binance API and store the data in **POSTGRESQL** db using the messaging que **RabbitMQ**.
 The app  displays the latest prices of the cryptocurrencies and their price graphs with timeline using **GRAFANA**.
 The app uses **Redis** to optimize the performance of the app by caching the current price data. The app also has a countdown for the bitcoin halving.
