@@ -28,7 +28,7 @@ public class TradeDataService {
 
     public void saveCurrentPrice(String key, String data) {
         redisTemplate.opsForValue().set(key, data);
-        redisTemplate.expire(key, 2, TimeUnit.SECONDS);
+        redisTemplate.expire(key, 1, TimeUnit.SECONDS);
     }
     public String getCurrentprice(String key)
     {
