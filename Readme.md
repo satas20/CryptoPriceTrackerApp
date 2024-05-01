@@ -4,6 +4,7 @@ The app  displays the latest prices of the cryptocurrencies and their price grap
 The app uses **Redis** to optimize the performance of the app by caching the current price data. The app also has a countdown for the bitcoin halving.
 The app tracks data for Bitcoin, Solana and Ethereum. More coins can be  added for future usage.
 
+I developed a telegram bot using this project: [satas20/BitcoinPriceNotifierTelegramBot](https://github.com/satas20/BitcoinPriceNotifierTelegramBot)
 
  # Features
 
